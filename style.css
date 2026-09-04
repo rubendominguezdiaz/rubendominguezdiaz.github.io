@@ -45,18 +45,6 @@
   --textsize: 20px;
 }
 
-:root[data-theme="dark"] {
-  --bg:        #0e2841;
-  --surface:   #16324f;
-  --primary:   #aecef4;
-  --content:   #d9e3ee;
-  --secondary: #9fb3c8;
-  --border:    #24405c;
-  --tint:      #16324f;
-  --band-border: #24405c;
-  --shadow:    rgba(0, 0, 0, .35);
-}
-
 *, *::before, *::after { box-sizing: border-box; }
 
 html { -webkit-text-size-adjust: 100%; }
@@ -257,19 +245,6 @@ footer div {
   .authors, .status { font-size: 16px; }
 }
 
-/* ---------- theme toggle ---------- */
-#theme-toggle {
-  font: inherit;
-  font-size: 19px;
-  line-height: 1;
-  padding: 6px 9px;
-  cursor: pointer;
-  color: var(--primary);
-  background: var(--tint);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-}
-#theme-toggle:hover { background: var(--border); }
 
 /* ---------- collapsible abstracts ---------- */
 .item details { margin-top: 10px; }

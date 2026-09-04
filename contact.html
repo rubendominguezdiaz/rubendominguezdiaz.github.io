@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contact — Rubén Domínguez-Díaz</title>
 <link rel="stylesheet" href="style.css">
-<script>(function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 </head>
 <body>
 
@@ -15,7 +14,6 @@
     <div class="menu">
       <a href="index.html">Home</a>
       <a href="contact.html" class="here">Contact</a>
-      <button id="theme-toggle" type="button" aria-label="Switch between light and dark">☼</button>
     </div>
   </div>
 </nav>
@@ -38,21 +36,5 @@
   represent those of the Banco de España or the Eurosystem.</div>
 </footer>
 
-<script>
-(function () {
-  var root = document.documentElement, btn = document.getElementById("theme-toggle");
-  function current() {
-    return root.getAttribute("data-theme") || "light";
-  }
-  function paint() { btn.textContent = current() === "dark" ? "☼" : "☾"; }
-  paint();
-  btn.addEventListener("click", function () {
-    var next = current() === "dark" ? "light" : "dark";
-    root.setAttribute("data-theme", next);
-    try { localStorage.setItem("theme", next); } catch (e) {}
-    paint();
-  });
-})();
-</script>
 </body>
 </html>
