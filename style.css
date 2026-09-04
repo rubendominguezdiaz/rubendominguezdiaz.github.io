@@ -143,6 +143,12 @@ main {
   margin: 0 0 .9rem;
 }
 .hero-subtitle:last-of-type { margin-bottom: 0; }
+.hero-subtitle strong { color: var(--primary); }
+.hero-subtitle a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 700;
+}
 .hero-links {
   display: flex;
   flex-wrap: wrap;
