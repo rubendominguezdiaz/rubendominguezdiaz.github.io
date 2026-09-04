@@ -36,6 +36,7 @@
   --secondary: #6b625a;
   --border:    #e3d6c6;
   --tint:      #ecdcc7;
+  --shadow:    rgba(22, 50, 79, .10);
 
   --main-width: 1200px;
   --gap: 28px;
@@ -44,7 +45,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg:        #12161c;
     --surface:   #1a2029;
     --primary:   #a9c6e2;
@@ -52,7 +53,19 @@
     --secondary: #93a0ad;
     --border:    #2a3340;
     --tint:      #243040;
+    --shadow:    rgba(0, 0, 0, .35);
   }
+}
+
+:root[data-theme="dark"] {
+  --bg:        #12161c;
+  --surface:   #1a2029;
+  --primary:   #a9c6e2;
+  --content:   #d6dde6;
+  --secondary: #93a0ad;
+  --border:    #2a3340;
+  --tint:      #243040;
+  --shadow:    rgba(0, 0, 0, .35);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -128,10 +141,7 @@ main {
   height: auto;
   border-radius: 16px;
   border: 2px solid var(--border);
-  box-shadow: 0 4px 16px rgba(22, 50, 79, .10);
-}
-@media (prefers-color-scheme: dark) {
-  .hero-photo img { box-shadow: 0 4px 16px rgba(0, 0, 0, .35); }
+  box-shadow: 0 4px 16px var(--shadow);
 }
 .hero-bio h1 {
   font-size: 42px;
@@ -241,3 +251,17 @@ footer div {
   .item h3 { font-size: 20px; }
   .authors, .status { font-size: 18px; }
 }
+
+/* ---------- theme toggle ---------- */
+#theme-toggle {
+  font: inherit;
+  font-size: 19px;
+  line-height: 1;
+  padding: 6px 9px;
+  cursor: pointer;
+  color: var(--primary);
+  background: var(--tint);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+#theme-toggle:hover { background: var(--border); }
