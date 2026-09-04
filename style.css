@@ -30,13 +30,13 @@
 
 :root {
   --bg:        #fcf5ea;
-  --surface:   #aecef4;
+  --surface:   #f5eee1;
   --primary:   #0e2841;
   --content:   #33302e;
   --secondary: #6b625a;
   --border:    #ded5c5;
-  --tint:      #aecef4;
-  --band-border: #8fb8e6;
+  --tint:      #ece4d5;
+  --band-border: #d8cdba;
   --shadow:    rgba(14, 40, 65, .12);
 
   --main-width: 1200px;
@@ -220,7 +220,7 @@ footer {
   border-top: 1px solid var(--band-border);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 14px;
-  color: var(--content);
+  color: var(--secondary);
 }
 footer div {
   max-width: calc(var(--main-width) + var(--gap) * 2);
