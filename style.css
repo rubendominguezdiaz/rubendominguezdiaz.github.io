@@ -1,22 +1,52 @@
+/* Erewhon — SIL Open Font License 1.1. See assets/fonts/README.txt */
+@font-face {
+  font-family: erewhon;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/Erewhon-Regular.woff2) format('woff2');
+}
+@font-face {
+  font-family: erewhon;
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/Erewhon-Italic.woff2) format('woff2');
+}
+@font-face {
+  font-family: erewhon;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(assets/fonts/Erewhon-Bold.woff2) format('woff2');
+}
+@font-face {
+  font-family: erewhon;
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(assets/fonts/Erewhon-BoldItalic.woff2) format('woff2');
+}
+
 :root {
-  --bg:        #fcf5ea;   /* warm cream */
-  --surface:   #f6ead9;   /* nav / footer band */
-  --entry:     #ffffff;
-  --primary:   #16324f;   /* deep navy: headings, links */
-  --content:   #33302e;   /* body text */
-  --secondary: #6b625a;   /* coauthors, status */
+  --bg:        #fcf5ea;
+  --surface:   #f6ead9;
+  --primary:   #16324f;
+  --content:   #33302e;
+  --secondary: #6b625a;
   --border:    #e3d6c6;
   --tint:      #ecdcc7;
 
   --main-width: 960px;
   --gap: 28px;
+  --header-height: 80px;
+  --textsize: 20px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --bg:        #12161c;
     --surface:   #1a2029;
-    --entry:     #1b2230;
     --primary:   #a9c6e2;
     --content:   #d6dde6;
     --secondary: #93a0ad;
@@ -25,7 +55,7 @@
   }
 }
 
-* , *::before, *::after { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: border-box; }
 
 html { -webkit-text-size-adjust: 100%; }
 
@@ -33,11 +63,12 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--content);
-  font-family: "Source Serif 4", Charter, "Bitstream Charter", Georgia, serif;
-  font-size: 19px;
+  font-family: erewhon, Charter, "Bitstream Charter", Georgia, serif;
+  font-size: var(--textsize);
   line-height: 1.6;
 }
 
+h1, h2, h3 { line-height: 1.2; margin: 0; }
 img { display: block; max-width: 100%; }
 
 a { color: var(--primary); text-decoration: none; }
@@ -52,23 +83,23 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   max-width: calc(var(--main-width) + var(--gap) * 2);
   margin: 0 auto;
   padding: 0 var(--gap);
-  height: 76px;
+  height: var(--header-height);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
 }
 .brand {
-  font-size: 25px;
+  font-size: 28px;
   font-weight: 700;
   color: var(--primary);
   letter-spacing: -.01em;
 }
 .menu {
   display: flex;
-  gap: 1.75rem;
+  gap: 28px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 16px;
+  font-size: 17px;
 }
 .menu a { color: var(--content); }
 .menu a.here {
@@ -84,13 +115,13 @@ main {
   padding: 0 var(--gap) 72px;
 }
 
-/* ---------- hero ---------- */
+/* ---------- hero: bio left, photo right ---------- */
 .hero {
   display: grid;
-  grid-template-columns: 320px 1fr;
+  grid-template-columns: 1fr 320px;
   gap: 48px;
   align-items: start;
-  padding: 72px 0 32px;
+  padding: 90px 0 40px;
 }
 .hero-photo img {
   width: 320px;
@@ -103,18 +134,22 @@ main {
   .hero-photo img { box-shadow: 0 4px 16px rgba(0, 0, 0, .35); }
 }
 .hero-bio h1 {
-  font-size: 40px;
+  font-size: 42px;
   font-weight: 700;
   line-height: 1.15;
   color: var(--primary);
-  margin: 0 0 18px;
+  margin: 0 0 20px;
 }
-.hero-bio p { margin: 0 0 1.1rem; }
+.hero-subtitle {
+  font-size: 19px;
+  line-height: 1.7;
+  margin: 0;
+}
 .hero-links {
   display: flex;
   flex-wrap: wrap;
   gap: .6rem;
-  margin-top: 1.4rem;
+  margin-top: 1.5rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 15px;
 }
@@ -133,45 +168,47 @@ main {
 }
 
 /* ---------- research ---------- */
-.research { padding-bottom: 24px; }
+.research { padding: 20px 0 60px; }
 .research h2 {
   font-size: 26px;
   font-weight: 700;
   color: var(--primary);
-  margin: 44px 0 18px;
+  margin: 40px 0 16px;
   padding-bottom: 8px;
   border-bottom: 2px solid var(--border);
 }
 .research h2:first-child { margin-top: 0; }
 
 .item {
-  margin-bottom: 26px;
-  padding: 10px 0 10px 24px;
+  margin-bottom: 28px;
+  padding: 12px 0 12px 24px;
   border-left: 3px solid var(--border);
   transition: border-color .2s ease;
 }
 .item:hover { border-left-color: var(--primary); }
 .item h3 {
-  font-size: 22px;
+  font-size: 23px;
   font-weight: 600;
   line-height: 1.4;
-  margin: 0 0 8px;
+  margin: 0 0 10px;
 }
 .authors, .status {
-  font-size: 17px;
+  font-size: 20px;
+  line-height: 1.6;
   color: var(--secondary);
   margin: 0;
 }
 .status { font-style: italic; }
 
 /* ---------- contact ---------- */
-.page { padding: 56px 0 0; }
+.page { padding: 60px 0 0; }
 .page h1 {
-  font-size: 34px;
+  font-size: 42px;
   font-weight: 700;
   color: var(--primary);
   margin: 0 0 24px;
 }
+.page p { margin: 0 0 1.2rem; }
 address { font-style: normal; }
 
 /* ---------- footer ---------- */
@@ -189,17 +226,18 @@ footer div {
 }
 
 @media (max-width: 768px) {
-  :root { --gap: 16px; }
-  body { font-size: 18px; }
-  .nav-inner { height: 64px; }
-  .brand { font-size: 21px; }
+  :root { --gap: 14px; --header-height: 64px; --textsize: 19px; }
+  .brand { font-size: 22px; }
   .hero {
     grid-template-columns: 1fr;
-    gap: 28px;
-    padding: 36px 0 20px;
+    gap: 24px;
+    padding: 30px 0 20px;
   }
-  .hero-photo img { width: 100%; max-width: 320px; }
-  .hero-bio h1 { font-size: 31px; }
+  .hero-photo { order: -1; }
+  .hero-photo img { width: 200px; }
+  .hero-bio h1 { font-size: 32px; }
+  .hero-subtitle { font-size: 17px; }
   .research h2 { font-size: 23px; }
   .item h3 { font-size: 20px; }
+  .authors, .status { font-size: 18px; }
 }
