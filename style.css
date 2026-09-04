@@ -259,3 +259,25 @@ footer div {
   border-radius: 8px;
 }
 #theme-toggle:hover { background: var(--border); }
+
+/* ---------- collapsible abstracts ---------- */
+.item details { margin-top: 10px; }
+.item summary {
+  display: inline-block;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--primary);
+  cursor: pointer;
+  user-select: none;
+}
+.item summary::marker { color: var(--border); }
+.item summary:hover { text-decoration: underline; text-underline-offset: 3px; }
+.item details[open] summary { margin-bottom: 10px; }
+.item .abstract {
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--content);
+  margin: 0;
+  max-width: 68ch;
+}
