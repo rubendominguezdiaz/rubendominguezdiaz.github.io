@@ -90,11 +90,13 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   gap: 1rem;
 }
 .brand {
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--primary);
-  letter-spacing: -.01em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  color: var(--content);
 }
+.brand:hover { color: var(--primary); text-decoration: none; }
 .menu {
   display: flex;
   gap: 28px;
@@ -197,10 +199,17 @@ main {
   margin: 0 0 10px;
 }
 .authors, .status {
-  font-size: 20px;
+  font-size: 17px;
   line-height: 1.6;
   color: var(--secondary);
   margin: 0;
+}
+
+/* 1. paper titles are links: make that visible */
+.item h3 a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
 }
 .status { font-style: italic; }
 
@@ -231,7 +240,7 @@ footer div {
 
 @media (max-width: 700px) {
   :root { --gap: 14px; --header-height: 64px; --textsize: 19px; }
-  .brand { font-size: 22px; }
+  .brand { font-size: 15px; }
   .hero {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -243,7 +252,7 @@ footer div {
   .hero-subtitle { font-size: 17px; }
   .research h2 { font-size: 23px; }
   .item h3 { font-size: 20px; }
-  .authors, .status { font-size: 18px; }
+  .authors, .status { font-size: 16px; }
 }
 
 /* ---------- theme toggle ---------- */
@@ -279,5 +288,4 @@ footer div {
   line-height: 1.65;
   color: var(--content);
   margin: 0;
-  max-width: 68ch;
 }
