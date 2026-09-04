@@ -20,8 +20,8 @@
 
 body {
   margin: 0 auto;
-  max-width: 46rem;
-  padding: 3rem 1.5rem 5rem;
+  max-width: 60rem;
+  padding: 3rem 2rem 5rem;
   background: var(--bg);
   color: var(--fg);
   font: 17px/1.65 Georgia, "Iowan Old Style", "Times New Roman", serif;
@@ -35,10 +35,10 @@ a:hover { text-decoration: underline; }
 header { margin-bottom: 2.5rem; }
 
 h1 {
-  font-size: 1.75rem;
+  font-size: 1.9rem;
   font-weight: 600;
   letter-spacing: -.01em;
-  margin: 0 0 .35rem;
+  margin: 0 0 .4rem;
 }
 
 nav {
@@ -46,25 +46,25 @@ nav {
   font-size: .875rem;
   letter-spacing: .02em;
   padding-bottom: 1.75rem;
-  margin-bottom: 1.75rem;
+  margin-bottom: 2rem;
   border-bottom: 1px solid var(--rule);
 }
 nav a { margin-right: 1.25rem; color: var(--muted); }
 nav a.here { color: var(--fg); font-weight: 600; }
 
-.intro { display: flex; gap: 2rem; align-items: flex-start; }
+.intro { display: flex; gap: 2.5rem; align-items: flex-start; }
 .intro-text { flex: 1 1 auto; }
 .intro p { margin: 0 0 1rem; }
 .photo {
   flex: 0 0 auto;
-  width: 9.5rem;
+  width: 22rem;
   height: auto;
   border-radius: 3px;
-  order: 2;
 }
-@media (max-width: 33rem) {
-  .intro { flex-direction: column-reverse; gap: 1.25rem; }
-  .photo { width: 8rem; }
+@media (max-width: 48rem) {
+  .intro { flex-direction: column; gap: 1.5rem; }
+  .photo { order: -1; width: 100%; max-width: 26rem; }
+  body { padding: 2rem 1.25rem 4rem; }
 }
 
 .meta {
