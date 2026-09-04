@@ -58,6 +58,7 @@ nav a.here { color: var(--fg); font-weight: 600; }
 .photo {
   flex: 0 0 auto;
   width: 9.5rem;
+  height: auto;
   border-radius: 3px;
   order: 2;
 }
