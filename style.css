@@ -44,19 +44,6 @@
   --textsize: 20px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg:        #12161c;
-    --surface:   #1a2029;
-    --primary:   #a9c6e2;
-    --content:   #d6dde6;
-    --secondary: #93a0ad;
-    --border:    #2a3340;
-    --tint:      #243040;
-    --shadow:    rgba(0, 0, 0, .35);
-  }
-}
-
 :root[data-theme="dark"] {
   --bg:        #12161c;
   --surface:   #1a2029;
