@@ -30,12 +30,12 @@
 
 :root {
   --bg:        #fcf5ea;
-  --surface:   #f6ead9;
+  --surface:   #f5eee1;
   --primary:   #16324f;
   --content:   #33302e;
   --secondary: #6b625a;
-  --border:    #e3d6c6;
-  --tint:      #ecdcc7;
+  --border:    #ded5c5;
+  --tint:      #ece4d5;
   --shadow:    rgba(22, 50, 79, .10);
 
   --main-width: 1200px;
