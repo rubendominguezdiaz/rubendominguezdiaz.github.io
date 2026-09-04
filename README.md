@@ -1,7 +1,8 @@
 # rubendominguezdiaz.github.io
 
-My personal academic website. Plain HTML and CSS, no JavaScript, no build
-step. Published by GitHub Pages from the repository root.
+My personal academic website, including the PDFs of my papers. Plain HTML and
+CSS, no JavaScript, no build step. Published by GitHub Pages from the
+repository root.
 
 Live at <https://rubendominguezdiaz.github.io/>
 
@@ -15,20 +16,17 @@ assets/
 ├── photo.jpg  headshot (800x600, web-sized)
 ├── cv.pdf     CV
 └── fonts/     Erewhon webfont (SIL Open Font License)
+papers/
+└── <n>_<shorttitle>/
+    └── v<year>[_<tag>]_<shorttitle>.pdf
 ```
 
-## Two repositories
+**This repository is the only place papers live.** The older `papers_PDF`
+repository is frozen: it still serves the URLs that were shared before the
+move, but nothing new goes there and its copies are not maintained.
 
-The **PDFs live in a separate repository**, `papers_PDF`, and are served from
-`https://rubendominguezdiaz.github.io/papers_PDF/papers/...`. This site only
-links to them.
-
-So adding a paper is two steps in two places:
-
-1. Put the PDF in `papers_PDF` and push it there.
-2. Add the entry to `index.html` here and push.
-
-Updating an existing PDF only needs step 1 — the link does not change.
+Everything here is public, whether or not it is linked from a page. Papers
+that must not be distributed do not belong in this repository at all.
 
 ## Publishing
 
@@ -45,13 +43,16 @@ ten minutes, so press Ctrl+F5 before concluding a change did not work.
 
 ## Adding a paper
 
-Copy this block into `index.html`, under the right `<h2>` heading, and edit it.
-Drop any line that does not apply — a solo-authored paper has no `authors`
-line, an unsubmitted one has no `status` line.
+1. Create `papers/<n>_<shorttitle>/` and put the PDF in it, named
+   `v<year>_<shorttitle>.pdf`. Add a tag between the two when the version was
+   made for a particular audience or milestone: the venue (`BdE`, `CEMFI`,
+   `ECB`, `EER`) or its status (`published`).
+2. Copy this block into `index.html`, under the right `<h2>`, and edit it.
+   Drop any line that does not apply.
 
 ```html
     <div class="item">
-      <h3><a href="https://rubendominguezdiaz.github.io/papers_PDF/papers/FOLDER/FILE.pdf" target="_blank" rel="noopener">Paper Title</a></h3>
+      <h3><a href="papers/FOLDER/FILE.pdf" target="_blank" rel="noopener">Paper Title</a></h3>
       <p class="authors">with Coauthor One and Coauthor Two</p>
       <p class="status">R&amp;R at Journal Name</p>
       <details>
@@ -61,10 +62,20 @@ line, an unsubmitted one has no `status` line.
     </div>
 ```
 
+3. Commit and push.
+
 Two things that will bite otherwise:
 
 - Write `&` as `&amp;` — so `R&amp;R`, not `R&R`.
-- Keep `target="_blank" rel="noopener"` so the PDF opens in a new tab.
+- Keep paper links **relative** (`papers/...`, not `https://...`). Relative
+  links work unchanged on both the github.io address and the custom domain.
+
+## Updating an existing paper
+
+Replace the PDF, keeping the same filename, then commit and push. The URL does
+not change, so nothing else needs editing and any link already shared keeps
+working. Only a change of year justifies a rename — and that breaks shared
+links, so also update `index.html`.
 
 ## When a paper gets published
 
