@@ -37,7 +37,7 @@
   --border:    #e3d6c6;
   --tint:      #ecdcc7;
 
-  --main-width: 960px;
+  --main-width: 1200px;
   --gap: 28px;
   --header-height: 80px;
   --textsize: 20px;
@@ -118,13 +118,13 @@ main {
 /* ---------- hero: bio left, photo right ---------- */
 .hero {
   display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: 48px;
+  grid-template-columns: 1fr 400px;
+  gap: 56px;
   align-items: start;
   padding: 90px 0 40px;
 }
 .hero-photo img {
-  width: 320px;
+  width: 400px;
   height: auto;
   border-radius: 16px;
   border: 2px solid var(--border);
