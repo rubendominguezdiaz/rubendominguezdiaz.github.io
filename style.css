@@ -118,13 +118,13 @@ main {
 /* ---------- hero: bio left, photo right ---------- */
 .hero {
   display: grid;
-  grid-template-columns: 1fr 400px;
+  grid-template-columns: minmax(0, 1fr) clamp(230px, 32%, 400px);
   gap: 56px;
   align-items: start;
   padding: 90px 0 40px;
 }
 .hero-photo img {
-  width: 400px;
+  width: 100%;
   height: auto;
   border-radius: 16px;
   border: 2px solid var(--border);
@@ -225,7 +225,7 @@ footer div {
   padding: 24px var(--gap);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   :root { --gap: 14px; --header-height: 64px; --textsize: 19px; }
   .brand { font-size: 22px; }
   .hero {
@@ -234,7 +234,7 @@ footer div {
     padding: 30px 0 20px;
   }
   .hero-photo { order: -1; }
-  .hero-photo img { width: 200px; }
+  .hero-photo img { width: 100%; max-width: 300px; }
   .hero-bio h1 { font-size: 32px; }
   .hero-subtitle { font-size: 17px; }
   .research h2 { font-size: 23px; }
