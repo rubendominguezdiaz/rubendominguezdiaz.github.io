@@ -68,12 +68,12 @@ papers/9_EGGEMenergy/v2026_EGGEMenergia.pdf
 A plain `v<year>_<shorttitle>.pdf` is the general working version for that
 year.
 
-### The frozen `papers_PDF` repository
+### The retired `papers_PDF` repository
 
-An older repository, `papers_PDF`, still serves the paper URLs that were
-shared before the papers moved here. It is **frozen**: nothing new goes there
-and its copies will drift. This repository is the only one that matters.
-`papers_PDF` can be deleted once nothing links to it any more.
+The papers briefly lived in a separate repository, `papers_PDF`, and were
+served from `/papers_PDF/papers/...`. That repository was deleted on
+5 September 2026, so those URLs no longer resolve. This repository is the only
+place papers live.
 
 ---
 
