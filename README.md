@@ -28,7 +28,8 @@ out. This is the main risk to be aware of.
 ## 2. What is where
 
 ```
-index.html            Home page: bio, working papers, publications, work in progress
+index.html            Home page: bio, working papers, publications, work in
+                      progress, policy work
 contact.html          Contact page
 style.css             All styling. Colours are variables at the very top
 README.md             This file
@@ -142,9 +143,9 @@ This is the only task that involves editing HTML.
 number, and put the PDF inside, named per the convention above.
 
 **Step 2 — add the entry.** Open `index.html`, find the right `<h2>` heading
-(`Working Papers`, `Publications`, or `Work in Progress`), and paste this
-block among the others under it. Papers appear in the order they appear in the
-file.
+(`Working Papers`, `Publications`, `Work in Progress`, or `Policy Work`), and
+paste this block among the others under it. Papers appear in the order they
+appear in the file.
 
 ```html
     <div class="item">
@@ -359,7 +360,8 @@ main
 └── section.research
     ├── h2 "Working Papers"   + div.item x7
     ├── h2 "Publications"     + div.item x2
-    └── h2 "Work in Progress" + div.item x2
+    ├── h2 "Work in Progress" + div.item x2
+    └── h2 "Policy Work"      + div.item x5
 footer > div
 ```
 
